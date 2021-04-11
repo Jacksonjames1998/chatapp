@@ -1,0 +1,61 @@
+{% extends 'regLogin/main.html'%}
+
+{%block content%}
+
+<div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+        <div class="user_card">
+            <div class="d-flex justify-content-center">
+                <h3 id="form-title">Registration</h3>
+            </div>
+            <div class="d-flex justify-content-center form_container">
+
+                <form method="POST" action="">
+                    <div class="input-group mb-3">
+                        
+                        <input type="text" name="username">
+                    </div>
+                    <div class="input-group mb-2">
+                        
+                        <input type="email" name="email">
+                    </div>
+                    <div class="input-group mb-2">
+                        
+                        <input type="text" name="password1">
+                    </div>
+                    <div class="input-group mb-2">
+                        
+                        <input type="text" name="password2">
+                    </div>
+
+                       <div class="d-flex justify-content-center mt-3 login_container">
+                        <button type="submit" class="btn btn-primary">Register Account</button>
+                       </div>
+                </form>
+            </div>
+    
+            <div class="mt-4">
+                <div class="d-flex justify-content-center links">
+                    Already have an account? <a href="{% url 'login' %}" class="ml-2">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+        
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[0].placeholder='Username..';
+    form_fields[1].placeholder='Email..';
+    form_fields[2].placeholder='Enter password...';
+    form_fields[3].placeholder='Re-enter Password...';
+
+
+    for (var field in form_fields){	
+        form_fields[field].className += ' form-control'
+    }
+</script>
+
+
+
+{% endblock %}
